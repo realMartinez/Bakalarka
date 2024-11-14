@@ -1,0 +1,168 @@
+.app {
+  position: relative;
+  height: 100vh;
+}
+
+.graph-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* Or any base color for the graph background */
+  z-index: 0;
+}
+
+.dynamic-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.input-page {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(210, 210, 210, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transform: translateY(100%); /* Start off-screen */
+  animation: slideUp 0.5s forwards;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 600px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+.input-group input, .non-resizable-textarea{
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-container button:nth-child(1) {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button-container button:nth-child(1):hover {
+  background-color: #0056b3;
+}
+
+.button-container button:nth-child(2) {
+  background-color: #d62845;
+  color: #fff;
+}
+
+.button-container button:nth-child(2):hover {
+  background-color: #b61b35;
+}
+
+.slide-up {
+  animation: slideUp 0.5s forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.5s forwards;
+}
+
+.graph-container {
+  width: calc(100% - 120px);
+  height: calc(100% - 120px);
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+/* Dočasné */
+.response-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1565c0;
+  text-align: center;
+}
+
+.non-resizable-textarea {
+  resize: none;
+  background-color: #d3d3d3;
+  height: 20px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
